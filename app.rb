@@ -16,3 +16,9 @@ end
 get '/extinction' do
   "The Borg shall inherit the Earth. The Morlocks will perish!"
 end
+
+get '/cat' do
+  "<div style='border: 3px dashed red'>
+    <img src='http://bit.ly/1eze8aE'>
+   </div>" 
+end
