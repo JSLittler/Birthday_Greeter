@@ -17,6 +17,8 @@ get '/extinction' do
   "The Borg shall inherit the Earth. The Morlocks will perish!"
 end
 
-get '/cat' do
-  erb(:index)
+get '/named_cat' do
+  p params
+  @name = params[:name]
+  erb :index
 end
