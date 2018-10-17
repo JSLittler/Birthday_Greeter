@@ -1,8 +1,9 @@
 require 'sinatra/base'
+require 'date'
+require './lib/model'
 
 class BirthdayGreeter < Sinatra::Base
   enable :sessions
-  attr_reader :name, :bday
 
   get '/' do
     erb :index
@@ -17,6 +18,8 @@ class BirthdayGreeter < Sinatra::Base
   get '/greet' do
     @name = session[:name]
     @bday = session[:bday]
+    @days = split_date(@bday)
+    @days == 0 ? (@message = "Happy Birthday") : (@message = "It is #{@days} days, to your birthday")
     erb :greet
   end
 
